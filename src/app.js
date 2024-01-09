@@ -5,6 +5,8 @@ window.onload = function() {
   console.log("Hello Rigo from the console!");
 };
 
+//      *** APUNTES ***      //
+
 /*
 
 const arr = [1];
@@ -27,7 +29,7 @@ console.log(person);
 
 */
 
-const arr = ["pepe", "maria", "juan", "jose", "barbara", "lola"];
+const arr = ["pepe", "maria", "juan", "jose", "barbara", "lola", "Patricia"];
 
 console.log(arr[4]);
 
@@ -70,4 +72,114 @@ i++
 } while (i < 1);
 
 //Higher order function (callback)
+const consoleLogIt = (el, i) => {
+  console.log(`valor es ${el} en la posición ${i}`);
+};
+arr.forEach(consoleLogIt);
 
+let aux = arr.forEach(consoleLogIt);
+console.log(aux);
+
+
+/*
+//Higher order function (callback)
+const consoleLogIt = (el, i) => {
+  return `valor es ${el} en la posición ${i}`);
+//forEach no devuelve nada
+arr.forEach ((el, i) => {
+  return `valor es ${el} en la posición ${i}`);
+});
+let objArray = [{nombre: "pepe"}, {nombre: "lola"}]
+//map
+let aux = arr.map(consoleLogIt);
+
+objArray = objArray.map((el)=>el.city="Sevilla")
+
+console.log(aux);
+
+*/
+
+
+
+//Higher order function (callback)
+const consoleLogIt = (el, i) => {
+  return `valor es ${el} en la posición ${i}`);
+//forEach no devuelve nada
+arr.forEach ((el, i) => {
+  return `valor es ${el} en la posición ${i}`);
+});
+let objArray = [{nombre: "pepe"}, {nombre: "lola"}]
+
+
+//map:
+
+//
+let people = [
+  { nombre: 'Pepe', edad: 10 },
+  { nombre: 'Maria', edad: 20 },    
+];
+
+people = people.map(el => {
+  return {
+      ...el,  
+      ciudad: 'Sevilla' 
+  };
+});
+
+console.log(people);
+
+let objArr = [{ nombre: "pepe" }, { nombre: "lola" }];
+
+objArr = objArr.map(el => {
+el.city = "sevilla";
+return el;
+});
+
+console.log(objArr)
+
+//
+
+//filter
+let filtered = arr.filter((el,i) => {
+  return (el[0].toLowerCase() == "p");
+});
+console.log(filtered);
+
+/*
+let filtered = arr.filter((el,i) => el[0].toLowerCase() == "p");
+console.log(filtered);
+*/
+
+//reduce
+const arrNumber = [5,8,4,6,8,2,6]
+let total = arrNumber.reduce((acc, el) => acc + el);
+console.log(total);
+
+
+//sort
+console.log(arr.sort(a, b) => a.toLowerCase() - b.toLowerCase());
+console.log(arrNumber.sort((a, b) => b - a));
+
+
+const arrowFunction = nombre => `Hola ${nombre}`;
+
+console.log(arrowFunction("pepe"));
+
+
+//
+//
+
+function fullName(a,b) {
+  let name = a.toUpperCase();
+  let lastName = b;
+
+  let completeName = name + " " + lastName;
+
+  return completeName;
+  
+}
+
+console.log(fullName('123','456'));
+console.log(fullName('Erwin','Aguero'));
+
+let human = fullName('Miriam', 'Perez');
