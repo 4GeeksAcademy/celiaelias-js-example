@@ -183,3 +183,29 @@ console.log(fullName('123','456'));
 console.log(fullName('Erwin','Aguero'));
 
 let human = fullName('Miriam', 'Perez');
+
+
+//
+window.onload = function () {
+  console.log("Hello Rigo from the console!");
+  alert("Hola cómo estás?");
+  prompt("Ingresa un valor");
+  let result = promt("Ingresa un valor");
+
+  console.log(result);
+}
+
+
+//excuse generator
+
+//en el html:
+<p id="excuse">My dog ate my homework</p>
+
+//en el js:
+window.onload = function () {
+  console.log("Hello Rigo from the console!");
+  let excuseHolder = document.getElementById("excuse");
+
+  excuseHolder.innerHTML = who[0] + " " + action[1] + " " + what[0] + " " + when[2];
+}
+
